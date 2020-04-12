@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+    <script>
+      // global scope
+      var a = "global scope";
+      function show(){
+        console.log(a);
+      }
+
+      show();
+
+      console.log(a);
+      
+      //local scope 
+      function display(){
+        var i = "outer function local scope";
+         function innerDis(){
+            var j = "inner function scope";
+            console.log(i);
+            console.log(j);
+         }
+         innerDis();
+         console.log(i);
+         console.log(j); //not define
+      }
+     display();
+            console.log(i);//not define
+            console.log(j);//not define
+            
+      //block scope
+      if(true){
+        var x = "block scope"; //global
+        console.log(x); 
+        let y = "use let"; //local
+        console.log(y);
+        const z = "use const" //local
+        console.log(z);
+      }
+      console.log(x);
+      console.log(y);//not define
+      console.log(z);//not define
+      
+    </script>
+</body>
+</html>

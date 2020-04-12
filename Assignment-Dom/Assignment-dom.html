@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <style>
+    .main{
+      width: 40%;
+      border: 1px solid black;
+      margin: 0 auto;
+      padding: 20px;    
+      }
+      h1{
+        text-align: center;
+        color: #23a297;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      input{
+        width: 90%;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid gray;
+      }
+      button{
+        width: 100%;
+        display: block;
+        padding: 10px;
+        font-weight: 600;
+        margin-top: 30px;
+        background-color: #23a297;
+        color: #ffff;
+        border: none;
+        cursor: pointer;
+      }
+      ul{
+        list-style: none;
+        margin: 30px 0px ;
+        padding: 0;
+        border: 1px solid gray;
+      }
+      li{
+        margin: 0 auto;
+       display: block;
+       padding: 16px;
+       border-bottom: 1px solid gray;
+       width: 90%;
+      }
+      .f{
+        float: right;
+      }
+      .f-s{
+        font-size: 25px;
+        color: #23a297;
+        padding-right: 12px;
+      }
+
+  </style>
+</head>
+<body>
+  <script>
+    var mDiv = document.createElement('div');
+    mDiv.classList.add('main');
+    var mH1 = document.createElement('h1');
+    mH1.innerText = "To-do-list";
+    var pdDiv = document.createElement('div');
+    pdDiv.classList.add('pd');
+    var inputIcon = document.createElement('i');
+    inputIcon.classList.add('fa','fa-list','f-s');
+    inputIcon.setAttribute('aria-hidden','true');
+    var mInput = document.createElement('input');
+    mInput.setAttribute('type','text');
+    mInput.setAttribute('placeholder','What to do');
+    var mBtn = document.createElement('button');
+    mBtn.setAttribute('type','button');
+    mBtn.innerText = "ADD";
+    var mUl = document.createElement('ul');
+    var li1 = document.createElement('li');
+    var li1Icon = document.createElement('i');
+    li1Icon.classList.add('fa','fa-check','f-s');
+    li1Icon.setAttribute('aria-hidden','true');
+    var li1Icon2 = document.createElement('i');
+    li1Icon2.classList.add('fa','fa-trash-o','f','f-s');
+    li1Icon2.setAttribute('aria-hidden','true');
+    var li2 = document.createElement('li');
+    var li2Icon = document.createElement('i');
+    li2Icon.classList.add('fa','fa-check','f-s');
+    li2Icon.setAttribute('aria-hidden','true');
+    var li2Icon2 = document.createElement('i');
+    li2Icon2.classList.add('fa','fa-trash-o','f','f-s');
+    li2Icon2.setAttribute('aria-hidden','true');
+    var litext1 = document.createTextNode('Dance');
+    var litext2 = document.createTextNode('Eat');
+
+    document.body.appendChild(mDiv);
+    mDiv.append(mH1);
+    mDiv.append(pdDiv);
+    pdDiv.append(inputIcon);
+    pdDiv.append(mInput);
+    pdDiv.append(mBtn);
+    pdDiv.append(mUl);
+    mUl.append(li1);
+    li1.appendChild(li1Icon);
+    li1.append(litext1);
+    li1.append(li1Icon2);
+    mUl.append(li2);
+    li2.append(li2Icon);
+    li2.append(litext2);
+    li2.append(li2Icon2);
+    
+
+    
+  </script>
+</body>
+</html>
