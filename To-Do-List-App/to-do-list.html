@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <style>
+    body{
+      background-color: #23a297;;
+    }
+    .main{
+      width: 40%;
+      margin: 0 auto;
+    margin-top: 4%;
+      padding: 20px;
+      background-color: #ffff; 
+      -webkit-box-shadow: -2px 4px 16px 6px rgba(0,0,0,0.48);
+-moz-box-shadow: -2px 4px 16px 6px rgba(0,0,0,0.48);
+box-shadow: -2px 4px 16px 6px rgba(0,0,0,0.48);
+      }
+      h1{
+        text-align: center;
+        color: #23a297;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      input{
+        width: 90%;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid gray;
+      }
+      button{
+        width: 100%;
+        display: block;
+        padding: 10px;
+        font-weight: 600;
+        margin-top: 30px;
+        background-color: #23a297;
+        color: #ffff;
+        border: none;
+        cursor: pointer;
+      }
+      ul{
+        list-style: none;
+        margin: 30px 0px ;
+        padding: 0;
+        border: 1px solid gray;
+      }
+      li{
+        margin: 0 auto;
+       display: block;
+       padding: 16px;
+       border-bottom: 1px solid gray;
+       width: 90%;
+      }
+      .close{
+        float: right;
+      }
+      .close:hover{
+        color: #f44336;;
+      }
+      .f-s{
+        font-size: 25px;
+        color: #23a297;
+        padding-right: 12px;
+      }
+      .checked {
+        color : #f44336;
+        text-decoration: line-through;
+      }
+    
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1>To-Do-List</h1>
+    <div class="pd">
+      <i class="fa fa-list f-s" aria-hidden="true"></i><input id="myInput" type="text" placeholder="What to do?" >
+      <button type="button" onclick="add()">ADD</button>
+      <ul id="myUl">
+        <!-- <li><i class="fa fa-check f-s" aria-hidden="true"></i>Dance<i class="fa fa-trash-o close f-s" aria-hidden="true"></i></li>
+        <li><i class="fa fa-check f-s" aria-hidden="true"></i>Eat<i class="fa fa-trash-o f close f-s" aria-hidden="true"></i></li> -->
+      </ul>
+    </div>
+  </div>
+    
+  <script>
+    var i;
+    var getI = document.getElementsByTagName('i');
+    var list = document.querySelector('ul');
+    list.addEventListener('click', function(li) {
+      if (li.target.tagName === 'LI') {
+          li.target.classList.toggle('checked');
+      }
+    }, false);
+
+    
+    function add(){
+      var inputValue = document.getElementById('myInput').value
+      var li = document.createElement('li');
+      var txt = document.createTextNode(inputValue);
+      
+      li.append(txt);
+      if(inputValue===""){
+        alert("please write samthing");
+      }
+      else{
+        document.getElementById('myUl').append(li);
+        document.getElementById('myInput').value = "";
+      }
+       var i = document.createElement('i');
+      i.className = "fa fa-trash-o close f-s"
+      li.append(i);
+
+      for (i = 0; i < getI.length; i++){
+         getI[i].onclick = function () {
+           var re = this.parentElement;
+          re.remove();
+          }
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
